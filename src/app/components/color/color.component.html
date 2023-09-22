@@ -1,0 +1,23 @@
+<br>
+<div ngbDropdown class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+	<button
+		type="button"
+    style="background-color: cadetblue;"
+		class="btn btn-outline-secondary me-2"
+		id="dropdownManual"
+		ngbDropdownAnchor
+		(focus)="myDrop.open()"
+	>
+		Renkler
+	</button>
+  <ul ngbDropdownMenu class="dropdown-menu">
+    <li
+      *ngFor="let color of colors"
+      (click)="setCurrentColor(color)"
+      routerLink="/cars/color/{{ color.id }}"
+      [class]="getCurrentColor(color)"
+    >
+      <a ngbDropdownItem class="dropdown-item">{{ color.name }}</a>
+    </li>
+  </ul>
+</div>

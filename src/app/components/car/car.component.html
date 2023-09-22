@@ -1,0 +1,33 @@
+<p>Arabalar</p>
+<br />
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div *ngFor="let car of cars" class="col">
+    <div class="card">
+      <!-- <img src='/images/images.png' class="card-img-top" alt="..." /> -->
+      <div class="card-body">
+        <h5 class="card-title">{{ car.id }}</h5>
+        <p>Brand: {{ car.brandId }}</p>
+        <p>Color: {{ car.colorId }}</p>
+        <p class="card-text">{{ car.description }}</p>
+        <button
+          class="btn btn-outline-secondary"
+          style="background-color: cadetblue"
+          routerLink="/cars/car-details/{{car.id}}"
+        >
+          Detay
+        </button>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <ul *ngFor="let rental of rentals">
+    <li> {{ rental.id }} </li>
+    <li> {{ rental.carId }}</li>
+    <li> {{ rental.rentDate }}</li>
+    <li> {{ rental.returnDate }}</li>
+
+  </ul>
+</div>

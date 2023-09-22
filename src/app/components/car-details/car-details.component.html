@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="card">
+    <div class="top-div">
+      <span><i class="fa fa-angle-left"></i></span> <button>NEW</button>
+      <span><i class="fa fa-shopping-cart"></i><small></small></span>
+    </div>
+    <div class="image-section">
+      <img src="https://i.imgur.com/WaZxrEe.jpg" />
+    </div>
+    <div class="bottom-div">
+      <p>Car Id: {{ car.id }}</p>
+      <p>Car brandId: {{ car.brandId }}</p>
+      <p>Car colorId: {{ car.colorId }}</p>
+      <p>Car modelYear: {{ car.modelYear }}</p>
+      <p>Car dailyPrice: {{ car.dailyPrice }}</p>
+      <p>Car description: {{ car.description }}</p>
+    </div>
+
+    <div class="last-section">
+      <div class="last">
+        <button
+          class="btn btn-outline-secondary"
+          style="background-color: cadetblue"
+          (click)="kirala(car)"
+        >
+          Kirala
+        </button>
+      </div>
+      <input type="hidden" value="200" id="product_input_price" />
+      <p>$<span id="price">{{car.dailyPrice}}</span></p>
+    </div>
+  </div>
+</div>
