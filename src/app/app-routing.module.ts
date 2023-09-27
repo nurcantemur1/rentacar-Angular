@@ -10,7 +10,7 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      { path: '', component: CarComponent },
+      { path: 'cars', component: CarComponent },
       { path: 'cars/brand/:brandId', component: CarComponent },
       { path: 'cars/color/:colorId', component: CarComponent },
       { path: 'cars/car-details/:carId', component: CarDetailsComponent },

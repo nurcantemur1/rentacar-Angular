@@ -1,25 +1,14 @@
-  <div ngbDropdown class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
-    <button
-      type="button"
-      style="background-color: cadetblue;"
-      class="btn btn-outline-secondary me-2"
-      id="dropdownManual"
-      ngbDropdownAnchor
-      (focus)="myDrop.open()"
-    >
-      Markalar
-    </button>
-    <ul *ngIf="brands.length>0"  ngbDropdownMenu class="dropdown-menu">
-      <li routerLink="" class="dropdown-item">tüm arabalar</li>
-      <li
-        (click)="setCurrentBrand(brand)"
-        *ngFor="let brand of brands"
-        routerLink="/cars/brand/{{ brand.id }}"
-        [class]="getCurrentBrand(brand)"
-      >
-        <a ngbDropdownItem class="dropdown-item">{{ brand.name }}</a>
-      </li>
-    </ul>
-  </div>
 
+<h6 class="bg-light p-2 border-top border-bottom">Brands</h6>
+<ul *ngIf="brands.length>0" class="list-group list-group-light">
+  <li class="list-group-item d-flex justify-content-between align-items-center"
+  (click)="setCurrentBrand(brand)"
+  *ngFor="let brand of brands"
+  routerLink="/cars/brand/{{ brand.id }}"
+  [class]="getCurrentBrand(brand)"
+>
+{{ brand.name }}
+<mat-icon matBadge="10">  
+</mat-icon>
+</ul>
 <br>

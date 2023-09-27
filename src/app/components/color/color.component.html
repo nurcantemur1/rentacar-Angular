@@ -1,23 +1,14 @@
-<br>
-<div ngbDropdown class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
-	<button
-		type="button"
-    style="background-color: cadetblue;"
-		class="btn btn-outline-secondary me-2"
-		id="dropdownManual"
-		ngbDropdownAnchor
-		(focus)="myDrop.open()"
-	>
-		Renkler
-	</button>
-  <ul ngbDropdownMenu class="dropdown-menu">
-    <li
-      *ngFor="let color of colors"
+
+<h6 class="bg-light p-2 border-top border-bottom">Colors</h6>
+<ul *ngIf="colors.length>0" class="list-group list-group-light">
+  <li class="list-group-item d-flex justify-content-between align-items-center"
+  *ngFor="let color of colors"
       (click)="setCurrentColor(color)"
       routerLink="/cars/color/{{ color.id }}"
       [class]="getCurrentColor(color)"
-    >
-      <a ngbDropdownItem class="dropdown-item">{{ color.name }}</a>
-    </li>
-  </ul>
-</div>
+>
+{{ color.name }}
+<mat-icon  [matBadge]="getColor(color.id)">  
+</mat-icon>
+</ul>
+<br>

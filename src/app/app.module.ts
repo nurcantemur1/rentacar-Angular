@@ -15,7 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
-
+import { MatBadgeModule} from '@angular/material/badge'; 
 
 
 @NgModule({
@@ -39,7 +39,8 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
       positionClass:"toast-bottom-right"
     }),
     BrowserAnimationsModule,
-    SectionsModule
+    SectionsModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
